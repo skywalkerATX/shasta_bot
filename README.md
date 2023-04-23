@@ -1,8 +1,10 @@
 # Shasta Textbot Deployment Guide
 
-This guide will help you set up and deploy the Shasta (or name it whatever you want) textbot using OpenAI, Flask, Heroku, and Twilio. 
+This guide will help you set up and deploy the very basic Shasta (or whatever name you choose) textbot using OpenAI, Flask, Heroku, and Twilio. 
 
-Shasta is the name of the hero from CS Lewis's Narnia Chronicles', ["The Horse and His Boy"](https://en.wikipedia.org/wiki/The_Horse_and_His_Boy). The name is just something I came up with quickly and not especially fitting, given that this is repurposed from OpenAI's "Marv" bot that's designed to be nothing but a snarky assistant with no power (to access the internet).
+This will go much more smoothly if you have some experience with basic python, cl commands, and integrated services experience. With that said, this bot is easily deployable by non-coders.  
+
+Shasta is the name of the hero from CS Lewis's Narnia Chronicles', ["The Horse and His Boy"](https://en.wikipedia.org/wiki/The_Horse_and_His_Boy). The name is just something I came up with quickly and not especially fitting. This particular bot is repurposed from OpenAI's "Marv" bot that's designed to be nothing but a snarky assistant with no power to do anything substantial (like access the internet).
 
 If you tool around in the [Marv bot OpenAI playground](https://platform.openai.com/playground/p/default-marv-sarcastic-chat?model=text-davinci-003) you can try tweaking models then replicate those model settings in your main.py model file. 
 
@@ -82,7 +84,7 @@ Keep an eye on the costs associated with using OpenAI, Heroku, and Twilio servic
 
 - `Twilio`: Bills at \$.0079 per in/outbound text. That's \$.0158 per conversation. This can add up quickly. Carrier fees usually average 50% of your conversation fees, so around \$.008 in carrier fees per post and response. The initial fee for phone number setup is a one-time \$4. There's also a \$1.55/month local phone number fee and \$.75/month 911 fee. 
   
-- `Heroku`: This will work consistently provided you use the Hobby level dyno Gunicorn (Green Unicorn). This costs \\$7/month. If you turn off the Hobby dyno and opt for free, you may notice delayed responses or configuring error notices sent from twilio. 
+- `Heroku`: This will work consistently provided you use the Hobby level dyno Gunicorn (Green Unicorn). This costs \$7/month. If you turn off the Hobby dyno and opt for free, you may notice delayed responses or configuring error notices sent from twilio. 
 
 Make sure to monitor your usage and adjust your plan accordingly to avoid unexpected charges. This goes for Heroku. 
 
