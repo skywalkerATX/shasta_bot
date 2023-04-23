@@ -80,9 +80,9 @@ Keep an eye on the costs associated with using OpenAI, Heroku, and Twilio servic
 
 ### As of April 23, 2023
 
-- `Twilio`: Bills at \$.0079 per in/outbound text. That's \$.0158 per conversation. This can add up quickly. Carrier fees usually average 50% of your conversation fees, so around \$.008 in carrier fees per post and response. The initial fee for phone number setup is a one-time \$4. There's also a \$1.55/month local phone number fee and \$.75/month 911 fee. 
+- `Twilio`: Bills at $\$$.0079 per in/outbound text. That's $\$$.0158 per conversation. This can add up quickly. Carrier fees usually average 50% of your conversation fees, so around $\$$.008 in carrier fees per post and response. The initial fee for phone number setup is a one-time $\$$4. There's also a $\$$1.55/month local phone number fee and $\$$.75/month 911 fee. 
   
-- `Heroku`: This will work consistently provided you use the Hobby level dyno Gunicorn (Green Unicorn). This costs \$7/month. If you turn off the Hobby dyno and opt for free, you may notice delayed responses or configuring error notices sent from twilio. 
+- `Heroku`: This will work consistently provided you use the Hobby level dyno Gunicorn (Green Unicorn). This costs $\$$7/month. If you turn off the Hobby dyno and opt for free, you may notice delayed responses or configuring error notices sent from twilio. 
 
 Make sure to monitor your usage and adjust your plan accordingly to avoid unexpected charges. This goes for Heroku. 
 
