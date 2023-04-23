@@ -15,9 +15,9 @@ The instructions below will walk you through the process of creating an OpenAI A
 - [Shasta Textbot Deployment Guide](#shasta-textbot-deployment-guide)
   - [Table of Contents](#table-of-contents)
   - [Create an OpenAI API Key](#create-an-openai-api-key)
-  - [Environment Setup and .env File](#environment-setup-and-env-file)
   - [Setting up Twilio](#setting-up-twilio)
   - [Setting up Heroku](#setting-up-heroku)
+  - [The .env File](#the-env-file)
   - [Modifying the Chatbot Responses](#modifying-the-chatbot-responses)
   - [A Note on Costs and Sharing the Phone Number](#a-note-on-costs-and-sharing-the-phone-number)
     - [As of April 23, 2023](#as-of-april-23-2023)
@@ -27,20 +27,6 @@ The instructions below will walk you through the process of creating an OpenAI A
 1. Go to the [OpenAI website](https://beta.openai.com/signup) and create an account if you don't have one already.
 2. After signing up or logging in, navigate to the [API Keys page](https://beta.openai.com/account/api-keys).
 3. Click on the "Create API key" button and take note of the generated key. This key will be used to authenticate requests to the OpenAI API.
-
-## Environment Setup and .env File
-
-To keep your API keys and other sensitive information secure, use a `.env` file to store them. This file should be added to your project's `.gitignore` so that it is not tracked by version control and accidentally shared.
-
-Create a `.env` file in the root of your project and add the following variables:
-
-```python
-OPENAI_API_KEY=your_openai_api_key
-TWILIO_PHONE_NUMBER=your_twilio_phone_number
-```
-
-
-Replace `your_openai_api_key` and `your_twilio_phone_number` with the actual values you obtained from OpenAI and Twilio.
 
 ## Setting up Twilio
 
@@ -63,6 +49,19 @@ heroku config:set TWILIO_PHONE_NUMBER=your_twilio_phone_number
 ```
 6. (Optional) Scale your app by running `heroku ps:scale web=1`.
 7. Visit your app's URL (displayed in the Heroku dashboard) to check if it's running.
+
+## The .env File
+
+To keep your API keys and other sensitive information secure, use a `.env` file to store them. This file should be added to your project's `.gitignore` so that it is not tracked by version control and accidentally shared.
+
+Create a `.env` file in the root of your project and add the following variables:
+
+```python
+OPENAI_API_KEY=your_openai_api_key
+TWILIO_PHONE_NUMBER=your_twilio_phone_number
+```
+
+Replace `your_openai_api_key` and `your_twilio_phone_number` with the actual values you obtained from OpenAI and Twilio.
 
 ## Modifying the Chatbot Responses
 To modify the chatbot responses, you can adjust the parameters passed to the openai.Completion.create() function in
