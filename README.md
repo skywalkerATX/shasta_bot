@@ -1,6 +1,6 @@
 # Shasta Textbot Deployment Guide
 
-This guide will help you set up and deploy the Shasta (or name it whatever you want) textbot using OpenAI, Heroku, and Twilio. 
+This guide will help you set up and deploy the Shasta (or name it whatever you want) textbot using OpenAI, Flask, Heroku, and Twilio. 
 
 Shasta is the name of the hero from CS Lewis's Narnia Chronicles', ["The Horse and His Boy"](https://en.wikipedia.org/wiki/The_Horse_and_His_Boy). The name is just something I came up with quickly and not especially fitting, given that this is repurposed from OpenAI's "Marv" bot that's designed to be nothing but a snarky assistant with no power (to access the internet).
 
@@ -14,8 +14,8 @@ The instructions below will walk you through the process of creating an OpenAI A
   - [Table of Contents](#table-of-contents)
   - [Create an OpenAI API Key](#create-an-openai-api-key)
   - [Environment Setup and .env File](#environment-setup-and-env-file)
-  - [Setting up Heroku](#setting-up-heroku)
   - [Setting up Twilio](#setting-up-twilio)
+  - [Setting up Heroku](#setting-up-heroku)
   - [Modifying the Chatbot Responses](#modifying-the-chatbot-responses)
   - [A Note on Costs and Sharing the Phone Number](#a-note-on-costs-and-sharing-the-phone-number)
     - [As of April 23, 2023](#as-of-april-23-2023)
@@ -40,6 +40,14 @@ TWILIO_PHONE_NUMBER=your_twilio_phone_number
 
 Replace `your_openai_api_key` and `your_twilio_phone_number` with the actual values you obtained from OpenAI and Twilio.
 
+## Setting up Twilio
+
+1. Sign up for a [Twilio account](https://www.twilio.com/try-twilio) if you don't have one already.
+2. After signing up or logging in, go to the [Phone Numbers page](https://www.twilio.com/console/phone-numbers/incoming) and click on "Get a Trial Number" or "Buy a Number" if you want a specific number.
+3. Once you have a Twilio phone number, navigate to the phone number's configuration page.
+4. Scroll down to the "Messaging" section and set the "A MESSAGE COMES IN" webhook to your Heroku app's `/sms` endpoint (e.g., `https://your-heroku-app.herokuapp.com/sms`). Make sure the request method is set to "HTTP POST".
+5. Save your changes on the Twilio phone number configuration page.
+
 ## Setting up Heroku
 
 1. Sign up for a [Heroku account](https://signup.heroku.com/) if you haven't already.
@@ -53,14 +61,6 @@ heroku config:set TWILIO_PHONE_NUMBER=your_twilio_phone_number
 ```
 6. (Optional) Scale your app by running `heroku ps:scale web=1`.
 7. Visit your app's URL (displayed in the Heroku dashboard) to check if it's running.
-
-## Setting up Twilio
-
-1. Sign up for a [Twilio account](https://www.twilio.com/try-twilio) if you don't have one already.
-2. After signing up or logging in, go to the [Phone Numbers page](https://www.twilio.com/console/phone-numbers/incoming) and click on "Get a Trial Number" or "Buy a Number" if you want a specific number.
-3. Once you have a Twilio phone number, navigate to the phone number's configuration page.
-4. Scroll down to the "Messaging" section and set the "A MESSAGE COMES IN" webhook to your Heroku app's `/sms` endpoint (e.g., `https://your-heroku-app.herokuapp.com/sms`). Make sure the request method is set to "HTTP POST".
-5. Save your changes on the Twilio phone number configuration page.
 
 ## Modifying the Chatbot Responses
 To modify the chatbot responses, you can adjust the parameters passed to the openai.Completion.create() function in
