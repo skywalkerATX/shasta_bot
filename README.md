@@ -4,9 +4,9 @@ This guide will help you set up and deploy the very basic Shasta (or whatever na
 
 This will go much more smoothly if you have some experience with basic python, cl commands, and integrated services experience. With that said, this bot is easily deployable by non-coders.  
 
-Shasta is the name of the hero from CS Lewis's Narnia Chronicles', ["The Horse and His Boy"](https://en.wikipedia.org/wiki/The_Horse_and_His_Boy). The name is just something I came up with quickly and not especially fitting. This particular bot is repurposed from OpenAI's "Marv" bot that's designed to be nothing but a snarky assistant with no power to do anything substantial (like access the internet).
+Shasta is the name of the hero from CS Lewis's Narnia Chronicles', ["The Horse and His Boy"](https://en.wikipedia.org/wiki/The_Horse_and_His_Boy). A book I read as a kid. 
 
-If you tool around in the [Marv bot OpenAI playground](https://platform.openai.com/playground/p/default-marv-sarcastic-chat?model=text-davinci-003) you can try tweaking models then replicate those model settings in your main.py model file. 
+This text bot is repurposed from OpenAI's "Marv" bot that's designed to be nothing but a snarky assistant with no power to do anything substantial (like access the internet). If you tool around in the [Marv bot OpenAI playground](https://platform.openai.com/playground/p/default-marv-sarcastic-chat?model=text-davinci-003) you can tweak the models to get desired responses, then replicate those model settings in your main.py script. 
 
 The instructions below will walk you through the process of creating an OpenAI API key, setting up a Heroku app, configuring Twilio, and modifying the textbot responses.
 
